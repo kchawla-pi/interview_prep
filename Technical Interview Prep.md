@@ -125,14 +125,24 @@
     -   Indexing: O(n)
     -   Search: O(n)
     -   Insertion: O(1)
-    -   Optimized Search: O(n)
+    -   Push: O(1)
+    -   Pop: O(1)
 
 #### Stack and Queue Methods:
 1.  **pop()**
 2.  **push(item)**
 3.  **peek()**
 4.  **isEmpty()**
-5.  threeInOne()
+5.  **threeInOne()**
     -   Design a single array to implement three stacks.
-6.  stack_min()
-    -   Design a stack which, in addition to push and pop, has a function min which returns the minimum element.  Push, pop, and min should operate at O(1)
+6.  **stack_min()**
+    -   Design a stack which, in addition to push and pop, has a function min which returns the minimum element.  Push, pop, and min should operate at O(1
+7.  **stack_of_plates()**
+    -   Implement a data strcuture `SetOfStacks` that mimics the creation of a new stack when a previous stack exceeds some threshold.  SetOfStacks.push() and SetOfStacks.pop() should behave identically to a single stack.
+    -   Implement a function popAt which performs a pop on a specific sub-stack.
+8.  **queue_stacks()**
+    -   Implement a MyQueue class which implements a queue using two stacks.
+9.  **sort_stack()**
+    -   Implement an algorithm to sort a stack such that the smallest items are on the top.  You can use an additional temporary stack, but no other data structure, e.g., array, etc.  Stacks support push, pop, peek, and isEmpty.
+10. **animalshelter()**
+    -   Animal shelter operates on a FIFO basis.  People must adopt either the oldest of all animals at the shelter.  They can select whether they want a dog or a cat, but they will get the oldest of that species.  Create the data structures to maintain this system and implement operations such as enqueue, dequeueAny, dequeueDog, and dequeueCat.

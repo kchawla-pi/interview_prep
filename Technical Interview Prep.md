@@ -104,3 +104,35 @@
     -   Given two singly linked lists, determine if the two lists intersect.  Return the intersecting node.  Intersection is defined based on reference, not value.  That is, if the kth node of the first linked list is the exact same node (by reference) as the jth node of the second linked list, then they are intersecting.
 11. **detectLoop()**
     -   Given a circular linked list, implement an algorithm that return sthe node at the beginning of the loop.
+
+
+## Stacks and Queues
+
+1.  **Topics:**
+    -   Stacks
+        -   Stacks are a data structure that supports LIFO ordering, i.e., the last item to be pushed onto the stack is the first item to be popped from it -- think like a stack of plates.
+        -   In Python, the easiest implementation of a stack is to just use a list, since the pop() and append() functions already operate at O(1) time complexity.
+    -   Queues
+        -   Queues are a data structure that suppoers FIFO ordering, i.e., the first item to be pushed onto the queue is the first item to be popped from it -- think like a line at the movie theatre or a line to to ride a rollercoaster: the first person in line gets to go first.
+        -   In Python, the best implementation of a queue is to import from the collections module the data type of `deque`, or a 'double-ended queue.'  Under the hood, a `deque` is implemented using a doubly linked list, and popping elements from the left is much more efficient.  A list is less efficient, because a queue requires you to append on one side of the list but pop from the other, and popping or appending on the left side of a list/array has O(n) time complexity.
+    -   Constant time access
+        -   The key to having a good stack or queue for its purpose is to have O(1) time access to the 'top' of the stack or the 'front' of the queue.
+    -   Use cases
+        -   Stacks are often useful in recursive algorithms.  Sometimes you need to push temporary data onto a stack as you recurse, then pop them as you backtrack.
+        -   Queues are used in breadth-first search or in implementing a cache.
+
+2.  **Big O efficiency:**
+    -   Indexing: O(n)
+    -   Search: O(n)
+    -   Insertion: O(1)
+    -   Optimized Search: O(n)
+
+#### Stack and Queue Methods:
+1.  **pop()**
+2.  **push(item)**
+3.  **peek()**
+4.  **isEmpty()**
+5.  threeInOne()
+    -   Design a single array to implement three stacks.
+6.  stack_min()
+    -   Design a stack which, in addition to push and pop, has a function min which returns the minimum element.  Push, pop, and min should operate at O(1)

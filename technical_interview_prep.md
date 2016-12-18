@@ -140,7 +140,7 @@
 6.  **stack_min()**
     -   Design a stack which, in addition to push and pop, has a function min which returns the minimum element.  Push, pop, and min should operate at O(1
 7.  **stack_of_plates()**
-    -   Implement a data strcuture `SetOfStacks` that mimics the creation of a new stack when a previous stack exceeds some threshold.  SetOfStacks.push() and SetOfStacks.pop() should behave identically to a single stack.
+    -   Implement a data structure `SetOfStacks` that mimics the creation of a new stack when a previous stack exceeds some threshold.  SetOfStacks.push() and SetOfStacks.pop() should behave identically to a single stack.
     -   Implement a function popAt which performs a pop on a specific sub-stack.
 8.  **queue_stacks()**
     -   Implement a MyQueue class which implements a queue using two stacks.

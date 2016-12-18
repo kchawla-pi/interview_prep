@@ -63,11 +63,13 @@
 
 1.  **Topics:**
     -   Basic Implementation of a Linked List Node
-        -   ``` python3
+
             class Node(object):
                 def __init__(self):
                     self.next = None
                     self.data = None
+
+
     -   Types of Linked Lists
         -   Singly Linked List
             -   Nodes are referenced in one direction.

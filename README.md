@@ -2,6 +2,8 @@
 
 These are my notes and pseudo/working code for technical interviews.
 
+####[Link to Notes (technical_interview_prep.md)](technical_interview_prep.md)
+
 
 ###Reading Material:
 - [TSiege's Technical Interview Cheat Sheet](https://gist.github.com/cs-cordero/db0026f64aefac966b330db3db99de89)

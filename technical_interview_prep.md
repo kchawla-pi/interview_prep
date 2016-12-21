@@ -148,3 +148,96 @@
     -   Implement an algorithm to sort a stack such that the smallest items are on the top.  You can use an additional temporary stack, but no other data structure, e.g., array, etc.  Stacks support push, pop, peek, and isEmpty.
 10. **animalshelter()**
     -   Animal shelter operates on a FIFO basis.  People must adopt either the oldest of all animals at the shelter.  They can select whether they want a dog or a cat, but they will get the oldest of that species.  Create the data structures to maintain this system and implement operations such as enqueue, dequeueAny, dequeueDog, and dequeueCat.
+
+
+## Trees and Graphs
+
+1.  **Topics:**
+    -   Basic Implementation of a Tree
+
+            class Node(object):
+                def __init__(self):
+                    self.data = None
+                    self.children = []
+                    # or if binary tree:
+                    self.left = None
+                    self.right = None
+
+
+    -   Types of Trees
+        -   At a basic level, a tree is a data structure composed of nodes.  Each tree has a root node. Each node has zero or more child nodes.  Each child node has zero or more child nodes.  Each child node has a parent node.
+        -   Trees may not contain cycles.  They don't have to be organized in any order and children may point back to their own parent nodes, but a node's child cannot be one of its ancestor nodes.
+        -   A node is a 'leaf' it has no children.
+        -   Binary Trees
+            -   Binary trees are trees in which eahc node has up to two children.
+        -   Binary Search Trees
+            -   Binary search trees are binary trees where every node fits a specific ordering property: `all left descendents <= n < all right descendents, for all node n`.
+        -   **Min-Heaps and Max-Heaps**
+            -   Heaps are typically complete binary trees in which each node is smaller/larger than its children.
+            -   Heaps allow for O(log n) insertion and extraction of the min element.
+        -   Tries (aka Prefix Tree)
+            -   "A trie is a variant of an n-ary tree in which characters are stored at each node. Each path down the tree may represent a word."  Words terminate with a '*' node, also known as a 'null node.'
+    -   Balance
+        -   Balanced trees represent a concept for how lop-sided a tree is.  If the majority of the nodes extend from the right of the root, for example, then the tree is typically described as not balanced.
+        -   Balancing a tree does not necessarily mean that the left and right subtrees are exactly the same size.  Ask your interviewer for clarification.
+        -   Oftentimes "balanced" just means that it can ensure O(log n) for `insert` and `find`.
+        -   Check out `red-black trees` and `AVL trees`.
+    -   Completeness
+        -   Complete binary trees are binary trees in which every level of the tree is filled except the right-most nodes on the last level.
+    -   Full Binary Trees
+        -   A full binary tree is a binary tree in which every node has either zero or two children.  No nodes have a single child.
+    -   Perfect Binary Trees
+        -   A binary tree that is both full and complete.  These are pretty rare in interviews and in real life, and never assume that a given tree is indeed perfect.
+
+2.  **Big O efficiency:**
+    -   Indexing: O(log n)
+    -   Search: O(log n)
+    -   Insertion: O(log n)
+
+#### Sub-Topic: Graphs
+1.  **Topics:**
+    -   **Types of Graphs**
+        -   Trees are technically a type of graph, but not all graphs are trees.  Trees are connected graphs without cycles.
+        -   Graphs are a collection of nodes with edges between some or none of them.  Graphs may consist of multiple isolated subgraphs.
+    -   Graph Direction
+        -   Graphs can be directed or undirected.  Directed graphs mean that one node points to a second node only in one direction.  Undirected nodes mean that two nodes are connected in both directions.
+    -   Implementation
+        -   Graphs can be implemented in its own **class** that stores a list of its nodes.  Each node in turn stores its direction to other nodes (their children)
+        -   Graphs can also be implemented in an **Adjacency List** or an **Adjacency Matrix**.  An adjacency list is basically a hash table where the keys are the nodes and the values are a list of their children.  An adjacency matrix is an NxN boolean matrix, where a true value indicates an edge from node i to node j.
+
+2.  **Big O efficiency:**
+    -   Indexing: N/A
+    -   Search: O(n)
+    -   Insertion: O(1)
+
+#### Trees and Graphs Methods:
+1.  **route_between_nodes()**
+    -   Given a directed graph, design an algorithm to find out whether there is a route between two nodes.
+2.  **minimal_tree()**
+    -   Given a sorted (increasing order) array with unique integer elements, write an algorithm to create a binary search tree with minimal height.
+3.  **list_of_depths()**
+    -   Given a binary tree, design an algorithm which creates a linked list of all the nodes at each depth (e.g., if you have a tree with depth D, you'll have D linked lists)
+4.  **check_balanced()**
+    -   Implement a function to check if a binary tree is balanced.  For the purposes of this question, a balanced tree is defined to be a tree such that the heights of the two subtrees of any node never differ by more than one.
+5.  **validate_BST()**
+    -   Implement a function to check if a binary tree is a binary search tree.
+6.  **successor()**
+    -   Write an algorithm to find the 'next' node (i.e., in-order successor) of a given node in a binary search tree.  You may assume taht each node has a link to its parent.
+    -   How would you implement a solution if there is no link to its parent.
+7.  **build_order()**
+    -   You are given a list of projects and a list of dependencies (which is a list of pairs of projects, where the second project is dependent on the first project).  All of a project's dependencies must be built before the project is.  Find a build order that will allow the projects to be built.  If there is no valid build order, return an error.
+    -   i.e.  input:
+        -   projects: a, b, c, d, e, f
+        -   dependencies: (a, d), (f, b), (b, d), (f, a), (d, c)
+    -   output:
+        -   f, e, a, b, d, c
+8.  **first_common_ancestor()**
+    -   Design an algorthm and write code to find the first common ancestor of two nodes in a binary tree.  Avoid storing additional nodes in a data structure.
+9.  **BST_Sequences()**
+    -   A binary search tree was created by traversing through an array from left to right and inserting each element.  Given a binary search tree with distinct elements, print all possible arrays that could have led to this tree.
+10. **check_subtree()**
+    -   T1 and T2 are very large binary treees, with T1 much bigger than T2.  Create an algorithm to determine if T2 is a subtree of T1.  A tree T2 is a subtree of T1 if there exists a node in T1 that the subtree of n is identical to T2.
+11. **random_node()**
+    -   Implement a binary tree class from scratch which in addition to `insert`, `find`, and `delete`, has a method `getRandomNode()` which returns a random node from teh tree.  All nodes should be equally likely to be chosen.  Design and implement an algorithm for `getRandomNode()` and explain how you would implement the rest of the methods.
+12. **paths_with_sum()**
+    -   You are given a binary tree in which each node contains an integer value (which might be positive or negative).  Design an algorithm to count the number of paths that sum to a given value.  The path does not need to start or end at the root or a leaf, but it must go downwards (traveling only from parent nodes to child nodes).
